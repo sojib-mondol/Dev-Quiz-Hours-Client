@@ -20,9 +20,10 @@ const QuizQuestion = ({q, index}) => {
 
             {
                 options.map(option => <Option
-                key={option.id}
+                key={option}
                 index = {options.indexOf(option)}
                 option = {option}
+                correctAnswer={correctAnswer}
                 ></Option>)
             }
             <p className='pb-4 mt-1'><span className='text-yellow-400  font-semibold'>Confused!</span> here is the <button onClick={() => correctAns({correctAnswer})} className='text-white font-semibold bg-red-600 hover:bg-blue-600 px-2 py-.5 rounded'>correct answer</button></p>

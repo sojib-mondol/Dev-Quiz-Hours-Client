@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ToestYes from '../ToastYes/ToestYes';
 
-const Option = ({index, option}) => {
-    console.log(option);
+
+
+const Option = ({index, option, correctAnswer}) => {
+    
+    const [ans, setAns] = useState();
+    if(ans === correctAnswer){
+        console.log('yes');
+    } else {
+        console.log('No');
+    }
+    
+   
+    
+
     return (
         <div>
-            <h2>{index+1}. {option}</h2>
+            {/* <h2>{index+1}. {option}</h2> */}
+            <div>
+                <input className='' type='radio' name="singleOption" value={option} onChange={e => setAns(e.target.value)}/>
+                <label>{index+1}. {option}</label>
+               
+            </div>
         </div>
     );
 };
