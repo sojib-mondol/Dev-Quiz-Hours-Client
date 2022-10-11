@@ -32,6 +32,14 @@ function App() {
     {
       path: '*',
       element: <Page404></Page404>
+    },
+    // this is for questons
+    {
+      path:'/course/:courseId',
+      loader: async ({params}) => {
+        return fetch(`https://openapi.programming-hero.com/api/quiz/${params.courseId}`)
+      },
+      element: <h2>questions component</h2>
     }
   ])
 
