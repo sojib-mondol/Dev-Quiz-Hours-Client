@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import { useLoaderData } from 'react-router-dom';
 import Quiz from '../Quiz/Quiz';
 import cover from '../../jessica-lewis-8T-lK9FkzyI-unsplash.png'
@@ -8,7 +8,7 @@ const Home = () => {
 
     const quizes = useLoaderData();
     const arryQuizes = quizes.data;
-    console.log(arryQuizes);
+    //console.log(arryQuizes);
 
     
     
