@@ -1,4 +1,5 @@
 import React from 'react';
+import Option from '../Option/Option';
 
 const QuizQuestion = ({q, index}) => {
 
@@ -6,8 +7,8 @@ const QuizQuestion = ({q, index}) => {
 
     // To show the correct answer
     const correctAns = ans => {
-        const x = ans.correctAnswer;
-        alert(x);
+        const popupCorrectAns = ans.correctAnswer;
+        alert(popupCorrectAns);
     }
 
     
@@ -15,12 +16,16 @@ const QuizQuestion = ({q, index}) => {
 
     return (
         <div className='text-teal-600 m-4 p-4 text-left shadow-lg rounded w-full items-center'>
-            <h4 className='font-semibold mb-4'>Quiz {index+1}: {question}</h4>
+            <h4 className='font-semibold mb-1'>Quiz {index+1}: {question}</h4>
 
             {
-                options.m
+                options.map(option => <Option
+                key={option.id}
+                index = {options.indexOf(option)}
+                option = {option}
+                ></Option>)
             }
-            <p className='pb-4'><span className='text-yellow-400  font-semibold'>Confused!</span> here is the <button onClick={() => correctAns({correctAnswer})} className='text-white font-semibold bg-red-600 px-2 py-.5 rounded'>correct answer</button></p>
+            <p className='pb-4 mt-1'><span className='text-yellow-400  font-semibold'>Confused!</span> here is the <button onClick={() => correctAns({correctAnswer})} className='text-white font-semibold bg-red-600 hover:bg-blue-600 px-2 py-.5 rounded'>correct answer</button></p>
 
         </div>
     );
