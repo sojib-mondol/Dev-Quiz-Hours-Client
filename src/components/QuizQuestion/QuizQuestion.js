@@ -15,9 +15,9 @@ const QuizQuestion = ({q, index}) => {
 
     const seletedCorrectOne = async (ans) => {
         if(ans === correctAnswer) {
-            alert('This one is correct answer.')
+            alert('Congratulation. Your answer is correct.');
         } else if (ans !== 'COD'){
-            alert('wrong')
+            alert('Wrong!');
         }
     }
 
