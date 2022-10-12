@@ -1,6 +1,7 @@
-import React from 'react';
+
 import { useLoaderData } from 'react-router-dom';
 import QuizQuestion from '../QuizQuestion/QuizQuestion';
+
 
 const Question = () => {
 

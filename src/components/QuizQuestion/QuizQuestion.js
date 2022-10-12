@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Option from '../Option/Option';
 
 const QuizQuestion = ({q, index}) => {
@@ -11,6 +11,18 @@ const QuizQuestion = ({q, index}) => {
         alert(popupCorrectAns);
     }
 
+    const [ans, setAns] = useState("COD");
+
+    const seletedCorrectOne = async (ans) => {
+        if(ans === correctAnswer) {
+            alert('This one is correct answer.')
+        } else if (ans !== 'COD'){
+            alert('wrong')
+        }
+    }
+
+   
+    
     
     //console.log(q);
 
@@ -23,7 +35,7 @@ const QuizQuestion = ({q, index}) => {
                 key={option}
                 index = {options.indexOf(option)}
                 option = {option}
-                correctAnswer={correctAnswer}
+                seletedCorrectOne={seletedCorrectOne}
                 ></Option>)
             }
             <p className='pb-4 mt-1'><span className='text-yellow-400  font-semibold'>Confused!</span> here is the <button onClick={() => correctAns({correctAnswer})} className='text-white font-semibold bg-red-600 hover:bg-blue-600 px-2 py-.5 rounded'>correct answer</button></p>
