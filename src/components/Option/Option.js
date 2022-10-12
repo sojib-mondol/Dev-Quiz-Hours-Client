@@ -7,10 +7,8 @@ const Option = ({index, option, correctAnswer}) => {
     
     const [ans, setAns] = useState();
     if(ans === correctAnswer){
-        console.log('yes');
-    } else {
-        console.log('No');
-    }
+        alert('yes');
+    } 
     
    
     
